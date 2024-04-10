@@ -200,9 +200,9 @@ func ResolveIPWithResolver(ctx context.Context, host string, r Resolver) (netip.
 	}
 	ipv4s, ipv6s := SortationAddr(ips)
 	if len(ipv6s) > 0 {
-		return ipv6s[fastrand.Intn(len(ipv4s))], nil
+		return ipv6s[fastrand.Intn(len(ipv6s))], nil
 	}
-	return ipv4s[fastrand.Intn(len(ipv6s))], nil
+	return ipv4s[fastrand.Intn(len(ipv4s))], nil
 }
 
 // ResolveIP with a host, return ip and priority return TypeA
